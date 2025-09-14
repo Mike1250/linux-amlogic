@@ -8,6 +8,16 @@ config AMLOGIC_DVB_EXTERN
 		Y: enable
 		N: disable
 		M: build as module
+
+config AMLOGIC_FE_EXTERN
+	tristate "Amlogic fe extern drivers"
+	default N
+	help
+		select it to support amlogic frontend extern driver.
+		Y: enable
+		N: disable
+		M: build as module
+
 endmenu
 
 menu "DVB AUCPU support"

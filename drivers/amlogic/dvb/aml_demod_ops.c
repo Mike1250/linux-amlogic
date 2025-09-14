@@ -47,6 +47,17 @@ static int demod_attach(struct dvb_demod *demod, bool attach)
 
 				if (!ops->external)
 					dvb_tuner_attach(ops->fe);
+				else {
+					if (ops->cfg.tuner0.id != AM_TUNER_NONE) {
+						const struct tuner_module * tuner = aml_get_tuner_module(ops->cfg.tuner0.id);
+						if (tuner->attach(tuner, ops->fe, &ops->cfg.tuner0) == NULL) {
+							pr_err("Demod: failed to attach tuner0 %s\n", tuner->name);
+						}
+						else {
+							pr_err("Demod: Missing tuner0 config\n");
+						}
+					}
+				}
 
 				pr_err("Demod: attach demod%d [id %d] done.\n",
 						ops->index, ops->cfg.id);
@@ -60,6 +71,12 @@ static int demod_attach(struct dvb_demod *demod, bool attach)
 			if (demod->used == ops)
 				demod->used = NULL;
 
+			if (ops->external) {
+				if (ops->cfg.tuner0.id != AM_TUNER_NONE) {
+					const struct tuner_module * tuner = aml_get_tuner_module(ops->cfg.tuner0.id);
+					tuner->detach(tuner);
+				}
+			}
 			ops->module->detach(ops->module);
 
 			ops->attached = false;
