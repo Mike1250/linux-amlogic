@@ -1673,11 +1673,20 @@ static int avl6862_set_property(struct dvb_frontend *fe,
 #endif
 static int avl6862_init(struct dvb_frontend *fe)
 {
-	return 0;
+	struct avl6862_priv *priv = fe->demodulator_priv;
+	if (priv->config.tuner_address) {
+		return avl6862_set_dvbmode(fe, SYS_DVBS);
+	} 
+	else {
+		return avl6862_set_dvbmode(fe, SYS_DVBT);
+	} 
 }
 
 static int avl6862_sleep(struct dvb_frontend *fe)
 {
+	struct avl6862_priv *priv = fe->demodulator_priv;
+	/* clear delivery system so next call to init will reconfigure the demod */
+	priv->delivery_system = -1;
 	return 0;
 }
 
@@ -1844,15 +1853,10 @@ struct dvb_frontend *avl6862_attach(struct avl6862_config *config,
 	dev_info(&priv->i2c->dev, "%s: found AVL%d " \
 				"family_id=0x%x", KBUILD_MODNAME, id, fid);
 
-        if (config->tuner_address) {
-		if (!avl6862_set_dvbmode(&priv->frontend, SYS_DVBS))
-		    return &priv->frontend;
-	} 
-	else {
-		if (!avl6862_set_dvbmode(&priv->frontend, SYS_DVBT))
-		    return &priv->frontend;
-	} 
-	
+	if (!avl6862_init(&priv->frontend)) {
+		return &priv->frontend;
+	}
+
 err1:
 	kfree(priv);
 err:
