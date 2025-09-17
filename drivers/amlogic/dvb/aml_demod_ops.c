@@ -319,9 +319,9 @@ int dvb_extern_unregister_frontend(void)
 
 	demod = get_dvb_demods();
 
-	demod->attach(demod, false);
-
 	demod->register_frontend(demod, false);
+
+	demod->attach(demod, false);
 
 	demod->refcount--;
 

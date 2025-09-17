@@ -340,6 +340,8 @@ static int aml_dvb_remove(struct platform_device *pdev)
 
 	ts_output_destroy();
 
+	frontend_remove();
+
 	mutex_destroy(&advb->mutex);
 	dvb_unregister_adapter(&advb->dvb_adapter);
 	class_unregister(&aml_dvb_class);

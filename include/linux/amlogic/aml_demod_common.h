@@ -223,7 +223,7 @@ struct aml_tuner {
 	__r; \
 })
 
-#define aml_dvb_detach(FUNC) symbol_put_addr(FUNC)
+#define aml_dvb_detach(FUNC) symbol_put(FUNC)
 
 #define AML_DEMOD_ATTACH_FUNCTION(name) \
 static inline struct dvb_frontend *name##_attach(\
