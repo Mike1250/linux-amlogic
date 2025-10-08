@@ -16,7 +16,9 @@ aml_fe_extern-objs = \
 		aml_avl68xx.o \
 		aml_mxl608.o \
 		avl6862.o \
-		mxl608.o
+		mxl608.o \
+		aml_m88rs6060.o \
+		m88rs6060.o
 
 ccflags-y += -I.
 ccflags-y += -I$(srctree)/drivers/media/dvb-core
