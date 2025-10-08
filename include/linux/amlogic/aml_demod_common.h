@@ -94,7 +94,8 @@ enum dtv_demod_type {
 	AM_DTV_DEMOD_MXL256C  = 25,
 	AM_DTV_DEMOD_MXL258C  = 26,
 	AM_DTV_DEMOD_SI2169   = 27,
-	AM_DTV_DEMOD_AVL6221C = 28
+	AM_DTV_DEMOD_AVL6221C = 28,
+	AM_DTV_DEMOD_M88RS6060 = 29
 };
 
 enum aml_fe_dev_type {
