@@ -1,0 +1,50 @@
+           CPU0       CPU1       CPU2       CPU3       
+ 19:     217179     294426     269085     285872     GIC-0  27 Level     arch_timer
+ 21:         15         43         48         36     GIC-0  92 Edge      Meson TimerF
+ 22:       3071          0          0          0     GIC-0 192 Level     ffe40000.bifrost
+ 23:          6          0          0          0     GIC-0 193 Level     ffe40000.bifrost
+ 24:        948          0          0          0     GIC-0 194 Level     ffe40000.bifrost
+ 26:          3          0          0          0     GIC-0 241 Edge    
+ 27:          2          0          0          0     GIC-0 242 Edge    
+ 28:      23744          0          0          0     GIC-0  40 Edge      eth0
+ 29:      40089          0          0          0     GIC-0  62 Level     xhci-hcd:usb1
+ 31:          0          0          0          0     GIC-0 232 Edge      meson-g12a-saradc
+ 32:      27266          0          0          0     GIC-0 247 Edge      ffd1d000.i2c
+ 34:        339          0          0          0     GIC-0 225 Edge      meson_uart
+ 39:      12066          0          0          0     GIC-0 184 Edge      ff660000.audiobus:tdm@1
+ 46:         30          0          0          0     GIC-0 119 Level     earc_rx
+ 47:          0          0          0          0     GIC-0 228 Edge      keypad
+ 48:       4829          0          0          0     GIC-0  58 Edge      meson_uart
+ 49:          1          0          0          0     GIC-0  89 Edge      hdmitx
+ 51:          3          0          0          0     GIC-0 235 Edge      hdmi_aocecb
+ 55:       6358          0          0          0     GIC-0 178 Edge      ge2d
+ 56:      12149          0          0          0     GIC-0  35 Edge      osd-vsync, lcd_vsync, vsync
+ 57:       8114          0          0          0     GIC-0  55 Edge      dmx irq
+ 58:       1471          0          0          0     GIC-0  64 Edge      tsdemux-fetch
+ 59:          0          0          0          0     GIC-0  75 Edge      vdec-0
+ 60:      64775          0          0          0     GIC-0  76 Edge      vdec-1
+ 64:      12149          0          0          0     GIC-0 121 Edge      rdma
+ 65:          0          0          0          0     GIC-0  88 Edge      osd-vsync-viu2, lcd_vsync2
+ 66:      57396          0          0          0     GIC-0 223 Edge      meson-aml-mmc
+ 67:          0          0          0          0     GIC-0 222 Edge      meson-aml-mmc
+ 68:      27947          0          0          0     GIC-0 221 Level     meson-aml-mmc
+ 70:         66          0          0          0     GIC-0  83 Edge      dmc_monitor
+ 71:          0          0          0          0     GIC-0 212 Edge      aml-aes, aml-sha
+ 72:          0          0          0          0     GIC-0  67 Edge      ff634800.p_tsensor
+ 73:          0          0          0          0     GIC-0  68 Edge      ff634c00.d_tsensor
+ 74:       7227          0          0          0     GIC-0  78 Edge      pre_di
+ 75:          0          0          0          0     GIC-0  72 Edge      post_di
+ 76:      11709          0          0          0     GIC-0  37 Edge      dmx irq
+ 77:          0          0          0          0     GIC-0  85 Edge      dmx irq
+ 78:       1497          0          0          0     GIC-0  51 Edge      dvr irq
+ 79:          0          0          0          0     GIC-0  57 Edge      dvr irq
+ 82:          0          0          0          0     GIC-0  69 Edge      smc
+ 84:          0          0          0          0  meson-gpio-irqchip  96 Edge      bt-irq
+IPI0:          0          0          0          0  CPU wakeup interrupts
+IPI1:          0          0          0          0  Timer broadcast interrupts
+IPI2:     164138     239210     262224     226177  Rescheduling interrupts
+IPI3:        502        309        813        136  Function call interrupts
+IPI4:          0          0          0          0  CPU stop interrupts
+IPI5:       9235       9281       9246       9229  IRQ work interrupts
+IPI6:          0          0          0          0  completion interrupts
+Err:          0
